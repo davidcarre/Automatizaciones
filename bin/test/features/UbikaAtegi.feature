@@ -5,5 +5,11 @@ Feature: Acceso a ubika
     debo ingresar la contraseña
 
 Scenario: Ingreso exitoso Ubika
-    Given Yo quiero acceder a la pag
-    
+    Given Yo quiero acceder a la pagina
+    When Escribo email
+    And Escribo contraseña
+    And clickar login
+    And Entro al menu
+    And click en tender spot
+    And creo un tender 
+
