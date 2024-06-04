@@ -20,6 +20,7 @@ public class UbikaSteps {
     
     @And ("Escribo contraseña")
     public void enterTextPass(){
+        System.out.println("Escribo contraseña paso ejecutado");
         ubika.psswText("MPxjsgo5");
     }
 
