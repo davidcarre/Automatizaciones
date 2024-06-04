@@ -13,3 +13,4 @@ Scenario: Ingreso exitoso Ubika
     And click en tender spot
     And creo un tender 
 
+
