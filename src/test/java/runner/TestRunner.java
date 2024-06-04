@@ -10,6 +10,7 @@ import pages.BasePage;
 
 @RunWith(Cucumber.class)
 @CucumberOptions(features="src/test/resources", //directorio de archivos 
+//pasos
 
         glue =  "steps", //donde estan los pasos 
         plugin = {"pretty","html:target/cucumber-reports"}

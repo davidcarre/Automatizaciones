@@ -10,7 +10,7 @@ public class Pagprincipal  extends BasePage{
     private String searchPass = "//input[@id='password']";
     private String clickMenu ="//td[@title='menu']";
     private String clickTs = "//*[@id=\"menu_modulos\"]/div[2]/table/tbody/tr[2]/td";
-    private String createTs ="//tbody/tr[3]/td[1]/a[1]";
+    private String createts ="//tbody/tr[3]/td[1]/a[1]";
     
     
     public Pagprincipal(){
@@ -43,8 +43,8 @@ public class Pagprincipal  extends BasePage{
         clickElement(clickTs);
     }
     //crear 
-    public void CreateTs(){
-        clickElement(createTs);
+    public void Createts(){
+        clickElement(createts);
     }
 
 
