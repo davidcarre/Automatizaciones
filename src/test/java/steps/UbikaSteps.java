@@ -41,10 +41,11 @@ public class UbikaSteps {
   }
 
   @And ("creo un tender")
-  public void createTender(){
-    ubika.clickElement("/html[1]/body[1]/div[1]/div[1]/div[2]/table[1]/tbody[1]/tr[3]/td[1]/a[1]");
+  public void inTender(){
+    ubika.clickElement("//tbody/tr[3]/td[1]/a[1]");
   }
 
+ 
 
 
 }
