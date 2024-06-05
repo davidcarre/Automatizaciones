@@ -10,7 +10,6 @@ public class UbikaSteps {
     @Given ("Yo quiero acceder a la pagina") 
     public void NavegarUbika(){
         ubika.navigateToUbika();;
-
     }
 
     @When ("Escribo email")
@@ -18,7 +17,7 @@ public class UbikaSteps {
         ubika.enterText("dcarreno@fagorelectronica.com.co");
     }
     
-    @And ("Escribo contraseña")
+    @And ("Escribo password")
     public void enterTextPass(){
         System.out.println("Escribo contraseña paso ejecutado");
         ubika.psswText("MPxjsgo5");
@@ -27,26 +26,20 @@ public class UbikaSteps {
     @And ("clickar login")
     public void clickEntrar(){
         ubika.clickElement("//button[@id='boton']");
+    }
 
-   }
+    @And ("Entro al menu")
+    public void clickMenu(){
+        ubika.clickElement("//td[@title='menu']");
+    }
 
-   @And ("Entro al menu")
-   public void clickMenu(){
-       ubika.clickElement("//td[@title='menu']");
+    @And ("click en tender spot")
+    public void clickTender(){
+        ubika.clickElement("//tbody/tr[3]/td[1]/a[1]");
+    }
 
-  }
-
-  @And ("click en tender spot")
-  public void clickTender(){
-    ubika.clickElement("//tbody/tr[3]/td[1]/a[1]");
-  }
-
-  @And ("creo un tender")
-  public void inTender(){
-    ubika.clickElement("//tbody/tr[3]/td[1]/a[1]");
-  }
-
- 
-
-
+    @And("click en el boton spot")
+    public void clickBotonSpot(){
+        ubika.clickBotonSpot();  // Llamar al método de Pagprincipal
+    }
 }
