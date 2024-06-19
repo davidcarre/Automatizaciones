@@ -40,6 +40,6 @@ public class UbikaSteps {
 
     @And("click en el boton spot")
     public void clickBotonSpot(){
-        ubika.clickBotonSpot();  // Llamar al método de Pagprincipal
+        ubika.clickElement("//div[@onclick='wizard();']");
     }
 }
