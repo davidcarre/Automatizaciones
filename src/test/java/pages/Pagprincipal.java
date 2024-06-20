@@ -1,56 +1,45 @@
 package pages;
 
-import org.openqa.selenium.WebElement;
-import org.openqa.selenium.support.ui.ExpectedCondition;
+import org.openqa.selenium.By;
 
-public class Pagprincipal  extends BasePage{
+public class Pagprincipal extends BasePage {
 
-    private String searchButton = "//button[@id='boton']";
-    private String searchText = "//input[@id='username']";
-    private String searchPass = "//input[@id='password']";
-    private String clickMenu ="//td[@title='menu']";
-    private String clickTs = "//*[@id=\"menu_modulos\"]/div[2]/table/tbody/tr[2]/td";
-    private String createts ="//tbody/tr[3]/td[1]/a[1]";
-    
-    
-    public Pagprincipal(){
+    private By searchButton = By.xpath("//button[@id='boton']");
+    private By searchText = By.xpath("//input[@id='username']");
+    private By searchPass = By.xpath("//input[@id='password']");
+    private By clickMenu = By.xpath("//td[@title='menu']");
+    private By clickTs = By.xpath("//*[@id='menu_modulos']/div[2]/table/tbody/tr[2]/td");
+    private By create = By.className("boton_spot");  // Localización por clase
+
+    public Pagprincipal() {
         super(driver);
     }
- 
-    //metodo para navegar a ubika
-    public void navigateToUbika(){
+
+    public void navigateToUbika() {
         navigateTo("https://ategi.ubika.es:8501/publica/");
     }
-    //email
-    public void enterText(String text){
-        write(searchText, text);
 
+    public void enterText(String text) {
+        write(searchText, text);
     }
-    //contraseña
-    public void psswText(String text){
+
+    public void enterPassword(String text) {
         write(searchPass, text);
     }
-    //logeo
-    public void clickButton(){
+
+    public void clickLoginButton() {
         clickElement(searchButton);
     }
-    //ingreso menu
-    public void showMenu(){
+
+    public void showMenu() {
         clickElement(clickMenu);
     }
-    //tender spot
-    public void EnterTS(){
+
+    public void enterTS() {
         clickElement(clickTs);
     }
-    //crear 
-    public void Createts(){
-        clickElement(createts);
+
+    public void createTender() {
+        clickElement(create);
     }
-
-
-
-
-
-
-
 }

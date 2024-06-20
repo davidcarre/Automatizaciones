@@ -7,10 +7,10 @@ Feature: Acceso a ubika
 Scenario: Ingreso exitoso Ubika
     Given Yo quiero acceder a la pagina
     When Escribo email
-    And Escribo contraseña
+    And Escribo password
     And clickar login
     And Entro al menu
     And click en tender spot
-    And creo un tender 
+    And click en crear
 
 
