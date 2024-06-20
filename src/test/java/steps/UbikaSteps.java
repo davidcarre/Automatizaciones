@@ -7,39 +7,38 @@ public class UbikaSteps {
 
     Pagprincipal ubika = new Pagprincipal();
 
-    @Given ("Yo quiero acceder a la pagina") 
-    public void NavegarUbika(){
-        ubika.navigateToUbika();;
+    @Given("Yo quiero acceder a la pagina")
+    public void navegarUbika() {
+        ubika.navigateToUbika();
     }
 
-    @When ("Escribo email")
-    public void enterTextEmail(){
+    @When("Escribo email")
+    public void enterTextEmail() {
         ubika.enterText("dcarreno@fagorelectronica.com.co");
     }
-    
-    @And ("Escribo password")
-    public void enterTextPass(){
-        System.out.println("Escribo contraseña paso ejecutado");
-        ubika.psswText("MPxjsgo5");
+
+    @And("Escribo password")
+    public void enterTextPass() {
+        ubika.enterPassword("MPxjsgo5");
     }
 
-    @And ("clickar login")
-    public void clickEntrar(){
-        ubika.clickElement("//button[@id='boton']");
+    @And("clickar login")
+    public void clickEntrar() {
+        ubika.clickLoginButton();
     }
 
-    @And ("Entro al menu")
-    public void clickMenu(){
-        ubika.clickElement("//td[@title='menu']");
+    @And("Entro al menu")
+    public void clickMenu() {
+        ubika.showMenu();
     }
 
-    @And ("click en tender spot")
-    public void clickTender(){
-        ubika.clickElement("//tbody/tr[3]/td[1]/a[1]");
+    @And("click en tender spot")
+    public void clickTender() {
+        ubika.enterTS();
     }
 
-    @And("click en el boton spot")
-    public void clickBotonSpot(){
-        ubika.clickElement("//div[@onclick='wizard();']");
+    @And("click en crear")
+    public void clickCrearSpot() {
+        ubika.createTender();
     }
 }

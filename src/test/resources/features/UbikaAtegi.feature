@@ -11,6 +11,6 @@ Scenario: Ingreso exitoso Ubika
     And clickar login
     And Entro al menu
     And click en tender spot
-    And click en el boton spot 
+    And click en crear
 
 
