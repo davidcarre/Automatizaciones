@@ -17,8 +17,8 @@ public class TestRunner {
 
     @BeforeClass
     public static void setup() {
-        // Configuración inicial, si es necesario
-        // Esto puede incluir la inicialización de cualquier configuración global
+        // No es necesario crear una nueva instancia de BasePage aquí.
+        // La inicialización está manejada por el bloque static de BasePage.
     }
 
     @AfterClass

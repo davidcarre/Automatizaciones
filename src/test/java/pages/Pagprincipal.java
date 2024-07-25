@@ -4,42 +4,43 @@ import org.openqa.selenium.By;
 
 public class Pagprincipal extends BasePage {
 
-    private By searchButton = By.xpath("//button[@id='boton']");
-    private By searchText = By.xpath("//input[@id='username']");
-    private By searchPass = By.xpath("//input[@id='password']");
-    private By clickMenu = By.xpath("//td[@title='menu']");
-    private By clickTs = By.xpath("//*[@id='menu_modulos']/div[2]/table/tbody/tr[2]/td");
-    private By create = By.className("boton_spot");  // Localización por clase
+    private By loginButton = By.xpath("//button[@id='boton']");
+    private By usernameField = By.xpath("//input[@id='username']");
+    private By passwordField = By.xpath("//input[@id='password']");
+    private By menuButton = By.xpath("//td[@title='menu']");
+    private By tenderSpotButton = By.xpath("//tbody/tr[3]/td[1]/a[1]");
+    private By createButton = By.xpath("//tr[@id='4187']//i[@title='Eliminar']");
+    //private By iframeLocator = By.id("myIframe"); // Reemplaza con el ID correcto del iframe
 
     public Pagprincipal() {
-        super(driver);
+        super();
     }
 
     public void navigateToUbika() {
         navigateTo("https://ategi.ubika.es:8501/publica/");
     }
 
-    public void enterText(String text) {
-        write(searchText, text);
+    public void enterUsername(String username) {
+        write(usernameField, "dcarreno@fagorelectronica.com.co");
     }
 
-    public void enterPassword(String text) {
-        write(searchPass, text);
+    public void enterPassword(String password) {
+        write(passwordField, "MPxjsgo5");
     }
 
     public void clickLoginButton() {
-        clickElement(searchButton);
+        clickElement(loginButton);
     }
 
     public void showMenu() {
-        clickElement(clickMenu);
+        clickElement(menuButton);
     }
 
-    public void enterTS() {
-        clickElement(clickTs);
+    public void enterTenderSpot() {
+        clickElement(tenderSpotButton);
     }
-
-    public void createTender() {
-        clickElement(create);
+    public void createButton1() {
+        clickElement(createButton);
     }
+    
 }

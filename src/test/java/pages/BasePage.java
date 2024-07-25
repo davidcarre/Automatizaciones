@@ -14,16 +14,13 @@ import io.github.bonigarcia.wdm.WebDriverManager;
 public class BasePage {
 
     protected static WebDriver driver;
-    private WebDriverWait wait;
+    private static WebDriverWait wait;
+    private static final Duration TIMEOUT = Duration.ofSeconds(10);
 
     static {
         WebDriverManager.chromedriver().setup();
         driver = new ChromeDriver();
-    }
-
-    public BasePage(WebDriver driver) {
-        BasePage.driver = driver;
-        wait = new WebDriverWait(driver, Duration.ofSeconds(10));
+        wait = new WebDriverWait(driver, TIMEOUT);
     }
 
     public static void navigateTo(String url) {
@@ -31,15 +28,25 @@ public class BasePage {
     }
 
     public static void closeBrowser() {
-        driver.quit();
+        if (driver != null) {
+            driver.quit();
+        }
     }
 
     protected WebElement findElement(By locator) {
-        return wait.until(ExpectedConditions.presenceOfElementLocated(locator));
+        try {
+            return wait.until(ExpectedConditions.presenceOfElementLocated(locator));
+        } catch (Exception e) {
+            throw new RuntimeException("Element not found: " + locator + " Exception: " + e.getMessage(), e);
+        }
     }
 
     protected WebElement findClickableElement(By locator) {
-        return wait.until(ExpectedConditions.elementToBeClickable(locator));
+        try {
+            return wait.until(ExpectedConditions.elementToBeClickable(locator));
+        } catch (Exception e) {
+            throw new RuntimeException("Element not clickable: " + locator + " Exception: " + e.getMessage(), e);
+        }
     }
 
     public void clickElement(By locator) {
@@ -66,5 +73,14 @@ public class BasePage {
         Select dropdown = new Select(findElement(locator));
         List<WebElement> dropdownOptions = dropdown.getOptions();
         return dropdownOptions.size();
+    }
+
+    public void switchToIframe(By iframeLocator) {
+        WebElement iframe = findElement(iframeLocator);
+        driver.switchTo().frame(iframe);
+    }
+
+    public void switchToDefaultContent() {
+        driver.switchTo().defaultContent();
     }
 }

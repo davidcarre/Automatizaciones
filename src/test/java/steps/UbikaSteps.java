@@ -5,40 +5,42 @@ import pages.Pagprincipal;
 
 public class UbikaSteps {
 
-    Pagprincipal ubika = new Pagprincipal();
+    private Pagprincipal ubika = new Pagprincipal();
 
-    @Given("Yo quiero acceder a la pagina")
-    public void navegarUbika() {
+    @Given("I want to access the page")
+    public void navigateToUbika() {
         ubika.navigateToUbika();
     }
 
-    @When("Escribo email")
-    public void enterTextEmail() {
-        ubika.enterText("dcarreno@fagorelectronica.com.co");
+    @When("I enter the email")
+    public void enterEmail() {
+        ubika.enterUsername(System.getenv("UBIKA_USERNAME"));
     }
 
-    @And("Escribo password")
-    public void enterTextPass() {
-        ubika.enterPassword("MPxjsgo5");
+    @And("I enter the password")
+    public void enterPassword() {
+        ubika.enterPassword(System.getenv("UBIKA_PASSWORD"));
     }
 
-    @And("clickar login")
-    public void clickEntrar() {
+    @And("I click login")
+    public void clickLogin() {
         ubika.clickLoginButton();
     }
 
-    @And("Entro al menu")
+    @And("I enter the menu")
     public void clickMenu() {
         ubika.showMenu();
     }
 
-    @And("click en tender spot")
-    public void clickTender() {
-        ubika.enterTS();
+    @And("I click tender spot")
+    public void clickTenderSpot() {
+        ubika.enterTenderSpot();
     }
 
-    @And("click en crear")
-    public void clickCrearSpot() {
-        ubika.createTender();
+    @And("I click tender")
+    public void clickk() {
+        ubika.createButton1();
     }
+
+    
 }

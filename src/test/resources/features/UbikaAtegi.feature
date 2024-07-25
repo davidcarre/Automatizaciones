@@ -1,16 +1,16 @@
-Feature: Acceso a ubika
+Feature: Acceso a Ubika
 
-    Para Acceder a ubika
-    Sin haber logueado
-    debo ingresar la contraseña
+  Como usuario de Ubika
+  Quiero acceder a la plataforma
+  Para poder interactuar con sus funcionalidades
 
-Scenario: Ingreso exitoso Ubika
-    Given Yo quiero acceder a la pagina
-    When Escribo email
-    And Escribo password
-    And clickar login
-    And Entro al menu
-    And click en tender spot
-    And click en crear
+ Scenario: Ingreso exitoso a Ubika
+    Given I want to access the page
+    When I enter the email
+    And I enter the password
+    And I click login
+    And I enter the menu
+    And I click tender spot
+    And I click tender
 
 
