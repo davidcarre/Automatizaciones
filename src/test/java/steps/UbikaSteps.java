@@ -1,11 +1,11 @@
 package steps;
 
 import io.cucumber.java.en.*;
-import pages.Pagprincipal;
+import pages.PagPrincipal;
 
 public class UbikaSteps {
 
-    private Pagprincipal ubika = new Pagprincipal();
+    private PagPrincipal ubika = new PagPrincipal();
 
     @Given("I want to access the page")
     public void navigateToUbika() {
@@ -42,5 +42,23 @@ public class UbikaSteps {
         ubika.createButton1();
     }
 
+    @And("I select tender")
+    public void choose(){
+        ubika.tenderSelected();
+    }
+
+    @And("I select configuration")
+    public void tipo1(){
+        ubika.type();
+    }
     
+    @And("I create tender")
+    public void crear(){
+        ubika.creation();
+    }
+
+    @Then("I will be see a tittle tender")
+    public void validation(){
+        
+    }
 }

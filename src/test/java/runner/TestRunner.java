@@ -8,17 +8,13 @@ import io.cucumber.junit.CucumberOptions;
 import pages.BasePage;
 
 @RunWith(Cucumber.class)
-@CucumberOptions(
-        features = "src/test/resources", // Directorio de archivos de características
+@CucumberOptions(features = "src/test/resources", // Directorio de archivos de características
         glue = "steps", // Donde están los pasos
-        plugin = {"pretty", "html:target/cucumber-reports"}
-)
+        plugin = { "pretty", "html:target/cucumber-reports" })
 public class TestRunner {
-
     @BeforeClass
     public static void setup() {
-        // No es necesario crear una nueva instancia de BasePage aquí.
-        // La inicialización está manejada por el bloque static de BasePage.
+        // Inicialización de configuración antes de ejecutar pruebas
     }
 
     @AfterClass

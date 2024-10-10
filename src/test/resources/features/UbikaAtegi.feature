@@ -12,5 +12,7 @@ Feature: Acceso a Ubika
     And I enter the menu
     And I click tender spot
     And I click tender
-
-
+    And I select tender
+    And I select configuration
+    And I create tender
+    Then I will be see a tittle tender
