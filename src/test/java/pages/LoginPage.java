@@ -7,12 +7,20 @@ public class LoginPage extends BasePage {
     private By passwordField = By.xpath("//input[@id='password']");
     private By loginButton = By.xpath("//button[@id='boton']");
 
-    public void enterUsername(String username) {
-        write(usernameField, username);
+    public LoginPage() {
+        super();
     }
 
-    public void enterPassword(String password) {
-        write(passwordField, password);
+    public void navigateToUbika() {
+        navigateTo("https://ategi.ubika.es:8501/publica/");
+    }
+
+    public void enterUsername() {
+        write(usernameField, "dcarreno@fagorelectronica.com.co");
+    }
+
+    public void enterPassword() {
+        write(passwordField, "MPxjsgo5");
     }
 
     public void clickLoginButton() {

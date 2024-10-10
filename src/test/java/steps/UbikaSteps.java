@@ -1,64 +1,40 @@
 package steps;
 
 import io.cucumber.java.en.*;
-import pages.PagPrincipal;
+import pages.LoginPage;
+import pages.TenderPage;
 
 public class UbikaSteps {
 
-    private PagPrincipal ubika = new PagPrincipal();
+    private LoginPage loginPage = new LoginPage();
+    private TenderPage TenderPage = new TenderPage();
 
-    @Given("I want to access the page")
-    public void navigateToUbika() {
-        ubika.navigateToUbika();
+    @Given("I navigate to the login page")
+    public void navigateToLoginPage() {
+        loginPage.navigateToUbika();
     }
 
-    @When("I enter the email")
-    public void enterEmail() {
-        ubika.enterUsername(System.getenv("UBIKA_USERNAME"));
-    }
-
-    @And("I enter the password")
-    public void enterPassword() {
-        ubika.enterPassword(System.getenv("UBIKA_PASSWORD"));
+    @When("I enter the email and password")
+    public void enterCredentials() {
+        loginPage.enterUsername();
+        loginPage.enterPassword();
     }
 
     @And("I click login")
     public void clickLogin() {
-        ubika.clickLoginButton();
+        loginPage.clickLoginButton();
     }
 
-    @And("I enter the menu")
-    public void clickMenu() {
-        ubika.showMenu();
+    @And("I navigate to the tender creation page")
+    public void navigateToTenderCreationPage() {
+        TenderPage.navigateToTenderSpot();
+        TenderPage.createTender();
+
     }
 
-    @And("I click tender spot")
-    public void clickTenderSpot() {
-        ubika.enterTenderSpot();
+    @Then("I should see the tender creation page")
+    public void validateTenderCreationPage() {
+
     }
 
-    @And("I click tender")
-    public void clickk() {
-        ubika.createButton1();
-    }
-
-    @And("I select tender")
-    public void choose(){
-        ubika.tenderSelected();
-    }
-
-    @And("I select configuration")
-    public void tipo1(){
-        ubika.type();
-    }
-    
-    @And("I create tender")
-    public void crear(){
-        ubika.creation();
-    }
-
-    @Then("I will be see a tittle tender")
-    public void validation(){
-        
-    }
 }

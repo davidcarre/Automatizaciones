@@ -16,9 +16,10 @@ public class TenderPage extends BasePage {
     }
 
     public void createTender() {
-        clickElementInIframe(0, botonSpotButton);
-        clickElementInIframe(0, mode);
-        clickElementInIframe(0, tipo);
-        clickElementInIframe(0, createTenderButton);
+        clickElementInIframe(0, botonSpotButton); // Clic en el botón "spot"
+        clickElementInIframe(0, mode); // Selecciona el modo
+        clickElementInIframe(0, tipo); // Selecciona el tipo
+        clickElementInIframe(0, createTenderButton); // Clic en el botón de crear tender
     }
 }
+
