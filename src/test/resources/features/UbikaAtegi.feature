@@ -6,7 +6,6 @@ Feature: Acceso a Ubika
 
   Scenario: Ingreso exitoso a Ubika
     Given I navigate to the login page
-    When I enter the email and password
-    And I click login
+    When I log in
     And I navigate to the tender creation page
-    Then I should see the tender creation page
+    And I create the tender

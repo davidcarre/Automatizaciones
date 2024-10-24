@@ -15,11 +15,8 @@ public class LoginPage extends BasePage {
         navigateTo("https://ategi.ubika.es:8501/publica/");
     }
 
-    public void enterUsername() {
+    public void fields() {
         write(usernameField, "dcarreno@fagorelectronica.com.co");
-    }
-
-    public void enterPassword() {
         write(passwordField, "MPxjsgo5");
     }
 

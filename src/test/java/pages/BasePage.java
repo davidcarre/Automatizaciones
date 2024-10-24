@@ -12,15 +12,15 @@ import org.openqa.selenium.support.ui.WebDriverWait;
 import io.github.bonigarcia.wdm.WebDriverManager;
 
 public class BasePage {
-    protected static WebDriver driver;
-    protected static WebDriverWait wait;
+    public static WebDriver driver;
+    public static WebDriverWait wait;
     private static final Duration TIMEOUT = Duration.ofSeconds(10);
 
     static {
         WebDriverManager.chromedriver().setup();
         driver = new ChromeDriver();
         wait = new WebDriverWait(driver, TIMEOUT);
-        driver.manage().window().maximize(); // Maximiza la ventana
+        driver.manage().window().maximize(); 
     }
 
     public static void navigateTo(String url) {

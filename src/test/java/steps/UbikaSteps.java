@@ -2,39 +2,37 @@ package steps;
 
 import io.cucumber.java.en.*;
 import pages.LoginPage;
-import pages.TenderPage;
+import pages.CreationTenderPage;
+import pages.NewTenderPage;
 
 public class UbikaSteps {
 
     private LoginPage loginPage = new LoginPage();
-    private TenderPage TenderPage = new TenderPage();
+    private CreationTenderPage creationTenderPage = new CreationTenderPage(); // Corrige la variable para seguir la convención
+    private NewTenderPage newTenderPage = new NewTenderPage(); // Agrega la instancia de NewTenderPage
 
     @Given("I navigate to the login page")
     public void navigateToLoginPage() {
         loginPage.navigateToUbika();
     }
 
-    @When("I enter the email and password")
+    @When("I log in")
     public void enterCredentials() {
-        loginPage.enterUsername();
-        loginPage.enterPassword();
-    }
-
-    @And("I click login")
-    public void clickLogin() {
+        loginPage.fields();
         loginPage.clickLoginButton();
     }
 
     @And("I navigate to the tender creation page")
     public void navigateToTenderCreationPage() {
-        TenderPage.navigateToTenderSpot();
-        TenderPage.createTender();
-
+        creationTenderPage.navigateToTenderSpot();
+        creationTenderPage.createTender();
     }
 
-    @Then("I should see the tender creation page")
-    public void validateTenderCreationPage() {
-
+    @And("I create the tender")
+    public void tenderCreation(){
+        newTenderPage.conditions();
+        newTenderPage.trip();
+        newTenderPage.commodity();
+        newTenderPage.proovedores();
     }
-
 }
