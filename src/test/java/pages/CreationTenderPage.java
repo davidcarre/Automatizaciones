@@ -2,7 +2,7 @@ package pages;
 
 import org.openqa.selenium.By;
 
-public class TenderPage extends BasePage {
+public class CreationTenderPage extends BasePage {
     private By menuButton = By.xpath("//td[@title='menu']");
     private By tenderSpotButton = By.xpath("//tbody/tr[3]/td[1]/a[1]");
     private By botonSpotButton = By.cssSelector(".boton_spot");
@@ -16,10 +16,10 @@ public class TenderPage extends BasePage {
     }
 
     public void createTender() {
-        clickElementInIframe(0, botonSpotButton); // Clic en el botón "spot"
-        clickElementInIframe(0, mode); // Selecciona el modo
-        clickElementInIframe(0, tipo); // Selecciona el tipo
-        clickElementInIframe(0, createTenderButton); // Clic en el botón de crear tender
+        clickElementInIframe(0, botonSpotButton); 
+        clickElementInIframe(0, mode); 
+        clickElementInIframe(0, tipo); 
+        clickElementInIframe(0, createTenderButton); 
     }
 }
 
