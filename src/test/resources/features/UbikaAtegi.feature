@@ -9,3 +9,4 @@ Feature: Acceso a Ubika
     When I log in
     And I navigate to the tender creation page
     And I create the tender
+    
